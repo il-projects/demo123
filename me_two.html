@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name ="viewport" content = "width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Workbench&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta charset="UTF-8">
+    <title>about me CSS</title>
+    <style type="text/css">
+		body,html{font-family: "Roboto", sans-serif;}
+		h1 {font-size:30px; color:blueviolet;margin-bottom: 30px;}
+        h2 {font-size:30px; color:blueviolet;margin-bottom: 30px;}
+		a {text-decoration:none;}
+		.center{padding: 20px; border: 2px solid #f797d6; margin: auto;width: 40%}
+        #top {background-image: url(about_me_food.jpg);background-size:contain;height: 500px; width: 40%;
+               float: left}
+        tr:nth-child(even) {background-color: #f7c2e2}
+        tr:nth-child(odd) {background-color: #ec8cf7}
+        label {display: inline-block; width:10%;text-align: right;}
+        input[type = submit] {margin-left: 10%}
+        .fixed-button {
+            position: fixed;
+            top: 100px;
+            right: 35px;
+        }
+        .fixed-button a {
+            display: block;
+            text-align: center;
+            padding: 10px;
+        }
+        .facebook {
+           background: #3c77f5;
+           color: white;
+         }
+         .twitter {
+            background: black;
+            color: white;
+         }
+
+	</style>
+
+
+
+</head>
+<body>
+    <h1>Ivy L</h1>
+    <p>I went to Las Vegas for the holidays and went to many great restaurants.
+        <br> The streets were crowded but I had a great time.</p>
+    <h2>List of favorite pet names</h2>
+<div class = "center">
+	<ol >
+		<li>A cat named snowball</li>
+		<li>A dog named cat</li>
+		<li>A dog named Lucy</li>
+	</ol>
+</div>
+    <a href="https://www.shabuyarestaurant.com/" target = "_blank">My favorite restaurant</a>
+    <p>It is my favorite restaurant because it has a wide variety of menu items. <br>
+    The price is reasonable and the food is always fresh.</p>
+    
+    
+    <div id = "top"></div>
+    <div>
+        I like to eat pasta with some shredded cheese on top and a slice of bread on the side.
+    </div>
+    <br clear = "all"/>
+    <br>
+    <table border = "1">
+        <tr>
+            <th>Book Name</th>
+            <th>Image of the cover</th>
+            <th>Author of the book</th>
+            <th>Summary</th>
+        </tr>
+        <tr>
+            <td>Little Women</td>
+            <td><img src = "Little_Women_cover.jpeg" height = "50"/></td>
+            <td>Louisa May Alcott</td>
+            <td>It is the story about the journey and challenges <br>
+                of four sisters from adolescece to adulthood.</td>
+        </tr>
+        <tr>
+            <td>Principles: Life and Work</td>
+            <td><img src = "Principles_cover.jpg" height = "50"/></td>
+            <td>Ray Dalio</td>
+            <td>It is a book about the principles that Ray Dalio <br>
+                follows in investing and life.</td>
+        </tr>
+        <tr>
+            <td>A Random Walk Down Wall Street</td>
+            <td><img src = "random_walk_cover.jpg" height = "50"/></td>
+            <td>Burton G. Malkiel</td>
+            <td>It is a book that discusses market efficency <br>
+                and the advantages of passive investing.</td>
+        </tr>
+        <tr>
+            <td>The Diary of A Young Girl</td>
+            <td><img src = "Diary_cover.jpg" height = "50"/></td>
+            <td>Anne Frank</td>
+            <td>It is the diary of Anne Frank when she was <br>
+                hiding from the Nazi occupation of the Netherlands.</td>
+        </tr>
+    </table>
+    <br>
+    <form>
+        <h2>Form</h2>
+        <label for ="firstname">First Name:</label>
+        <input type ="text" id="firstname" name ="firstname">
+        <br>
+        <label for ="lastname">Last Name:</label>
+        <input type ="text" id="lastname" name ="lastname">
+        <br>
+        <label for ="city">City:</label>
+        <input type ="text" id="city" name ="city">
+        <br>
+        <label for ="state">State:</label>
+        <select id = "state" name = "state">
+            <option value = "AL">AL</option>
+            <option value = "AK">AK</option>
+            <option value = "AZ">AZ</option>
+            <option value = "AR">AR</option>
+            <option value = "AS">AS</option>
+            <option value = "CA">CA</option>
+            <option value = "CO">CO</option>
+            <option value = "CT">CT</option>
+            <option value = "DE">DE</option>
+            <option value = "DC">DC</option>
+            <option value = "FL">FL</option>
+            <option value = "GA">GA</option>
+            <option value = "GU">GU</option>
+            <option value = "HI">HI</option>
+            <option value = "ID">ID</option>
+            <option value = "IL">IL</option>
+            <option value = "IN">IN</option>
+            <option value = "IA">IA</option>
+            <option value = "KS">KS</option>
+            <option value = "KY">KY</option>
+            <option value = "LA">LA</option>
+            <option value = "ME">ME</option>
+            <option value = "MD">MD</option>
+            <option value = "MA">MA</option>
+            <option value = "MI">MI</option>
+            <option value = "MN">MN</option>
+            <option value = "MS">MS</option>
+            <option value = "MO">MO</option>
+            <option value = "MT">MT</option>
+            <option value = "NE">NE</option>
+            <option value = "NV">NV</option>
+            <option value = "NH">NH</option>
+            <option value = "NJ">NJ</option>
+            <option value = "NM">NM</option>
+            <option value = "NY">NY</option>
+            <option value = "NC">NC</option>
+            <option value = "ND">ND</option>
+            <option value = "MP">MP</option>
+            <option value = "OH">OH</option>
+            <option value = "OK">OK</option>
+            <option value = "OR">OR</option>
+            <option value = "PA">PA</option>
+            <option value = "PR">PR</option>
+            <option value = "RI">RI</option>
+            <option value = "SC">SC</option>
+            <option value = "TN">TN</option>
+            <option value = "TX">TX</option>
+            <option value = "TT">TT</option>
+            <option value = "UT">UT</option>
+            <option value = "VT">VT</option>
+            <option value = "VA">VA</option>
+            <option value = "VI">VI</option>
+            <option value = "WA">WA</option>
+            <option value = "WV">WV</option>
+            <option value = "WI">WI</option>
+            <option value = "WY">WY</option>
+        </select>
+        <br>
+        <input type="submit" value = "Submit">
+    </form>
+    
+    <div class = "fixed-button">
+        <a href="#" class = "facebook">
+            <i class = "fa fa-facebook fa-2x"></i>
+        </a>
+        <a href="#" class = "twitter">
+            <i class = "fa fa-twitter fa-2x"></i>
+        </a>
+    </div>
+
+</body>
+</html>
