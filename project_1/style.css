@@ -1,12 +1,12 @@
 .fixed-button {
     position: fixed;
-    top: 15px;
-    right: 15px;
+    top: 1.5vw;
+    right: 1.5vw;
 }
 .fixed-button a {
     display: block;
     text-align: center;
-    padding: 10px;
+    padding: 1vw;
 }
 .facebook {
    background: #3c77f5;
