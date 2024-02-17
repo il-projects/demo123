@@ -1,0 +1,37 @@
+.fixed-button {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+}
+.fixed-button a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+.facebook {
+   background: #3c77f5;
+   color: white;
+ }
+ .twitter {
+    background: black;
+    color: white;
+ }
+ .youtube {
+    background: red;
+    color:white
+ }
+ .spotify {
+    background:black;
+    color:rgb(10, 191, 10);
+ }
+
+  a {text-decoration:none;color: white}
+ .nav {overflow: hideen;}
+ .nav a {text-decoration: none; padding: 12px; font-size: 15px; width: 20px;
+         font-family:"Noto Sans JP"}
+ .nav a:hover {background-color: rgb(179, 176, 176); color: black;margin:10px}
+
+ .footer {position: fixed; left: 0%; bottom: 0; width: 100%; color: white;}
+ .footer a {text-decoration: none; padding: 10px; font-size: 12px; width:20px;
+            font-family:"Noto Sans JP"}
+ .footer a:hover {background-color: rgb(179, 176, 176); color: black}
