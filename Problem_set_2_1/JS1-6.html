@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset = "utf-8" />
+    <title>Problem 1</title>
+    </head>
+
+    <body>
+        <script>
+             
+             function count(numsArray, val) {
+                len = numsArray.length;
+                count = 0;
+                for (i=0; i<len; i++) {
+                    if (numsArray[i] < val) {
+                       count++;
+                    }
+                }
+                return count;
+             }
+
+             function display() {
+              numArray = [3, 55, 30, 28, 12, 9];
+              val = 10;
+               result = count(numArray,val);
+               document.write("The number of items in the array that are less than " + val
+                              + " is " + result);
+             }
+             
+             display();
+        </script>
+    </body>
+</html>
