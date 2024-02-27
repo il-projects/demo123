@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            function select() {
+                index = document.getElementById("form").selectedIndex;
+                state = document.getElementById("form").options[index].innerHTML;
+                currVal = document.getElementById("result").innerHTML;
+                txt = currVal + state + "<br>";
+                document.getElementById("result").innerHTML = txt;
+                
+            }
+            function clear2() {
+                document.getElementById("result").innerHTML = "";
+            }
+        </script>
+        <form style = "display:inline">
+            <p>Pick a state</p>
+            <select id ="form" size = "10">
+                <option>Alabama</option>
+                <option>Alaska</option>
+                <option>Arizona</option>
+                <option>Arkansas</option>
+                <option>California</option>
+                <option>Colorado</option>
+                <option>Connecticut</option>
+                <option>Delaware</option>
+                <option>Florida</option>
+                <option>Georgia</option>
+            </select>
+            <button type ="button" style = "display: inline" onclick = "select()">Add State</button>
+        </form>
+        <br>
+        <br>
+        <div id = "result" style = "padding:20px; border-style: solid; position: relative; width:80px; height:auto">
+        
+        </div>
+        <br>
+        <button onclick = "clear2()">Clear States</button>
+
+
+     
+    </body>
+</html>

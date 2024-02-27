@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <script>
+            function speak(prefix) {
+                val = document.form1.username.value;
+                alert(prefix + " " + val);
+            }
+      </script>
+    </head>
+    <body>
+
+        <form name = "form1">
+            <input type = "text" name = "username" id = "username">
+        </form>
+        <input type='button' value="Hello" onclick="speak('Hello')">
+        <input type = "button" value = "GoodBye" onclick = "speak('Good Bye')">
+        <input type = "button" value = "Greetings" onclick = "speak('Greetings')">
+    </body>
+</html>
