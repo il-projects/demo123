@@ -1,13 +1,13 @@
 
 [
-    {"title": "Brave", "artist": "YOASOBI", "year": "2023", "genre":["Japanese", " pop"]},
-    {"title": "Tracing A Dream", "artist": "YOASOBI", "year": "2020", "genre":["Japanese", " pop"]},
-    {"title": "If I Could Draw Life", "artist": "YOASOBI", "year": "2021", "genre":["Japanese", " pop"]},
+    {"title": "Brave", "artist": "YOASOBI", "year": "2023", "genre":["Japanese", "pop"]},
+    {"title": "Tracing A Dream", "artist": "YOASOBI", "year": "2020", "genre":["Japanese", "pop"]},
+    {"title": "If I Could Draw Life", "artist": "YOASOBI", "year": "2021", "genre":["Japanese", "pop"]},
     {"title": "So Am I", "artist": "Ava Max", "year": "2019", "genre":["Electropop"]},
-    {"title": "Roses", "artist": "The Chainsmokers", "year": "2015", "genre":["Dance pop", " future bass"]},
-    {"title": "Inside Out", "artist": "The Chainsmokers", "year": "2016", "genre":["Dance pop", " future bass"]},
-    {"title": "Something Just Like This", "artist": "The Chainsmokers", "year": "2017", "genre":["Dance pop", " future bass"]},
-    {"title": "This Feeling", "artist": "The Chainsmokers", "year": "2018", "genre":["Dance pop", " future bass"]},
-    {"title": "Matsuri", "artist": "Fujii Kaze", "year": "2022", "genre":["Japanese", " pop"]},
-    {"title": "Hedemo Ne-Yo", "artist": "Fujii Kaze", "year": "2020", "genre":["Japanese", " pop"]}
+    {"title": "Roses", "artist": "The Chainsmokers", "year": "2015", "genre":["Dance pop", "future bass"]},
+    {"title": "Inside Out", "artist": "The Chainsmokers", "year": "2016", "genre":["Dance pop", "future bass"]},
+    {"title": "Something Just Like This", "artist": "The Chainsmokers", "year": "2017", "genre":["Dance pop", "future bass"]},
+    {"title": "This Feeling", "artist": "The Chainsmokers", "year": "2018", "genre":["Dance pop", "future bass"]},
+    {"title": "Matsuri", "artist": "Fujii Kaze", "year": "2022", "genre":["Japanese", "pop"]},
+    {"title": "Hedemo Ne-Yo", "artist": "Fujii Kaze", "year": "2020", "genre":["Japanese", "pop"]}
   ]
