@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+	<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   
+	integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   
+	crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <script>
+          $.get("https://il-projects.github.io/demo123/Problem_set_2_3/songs.json",
+                    function(data){
+                        songStr = JSON.stringify(data);
+                        genreSet = new Set();
+                        for (var i = 0; i < data.length; i++) { 
+                            if (data[i].genre.length > 1) {
+                                for (var j = 0; j < data[i].genre.length; j++) {
+                                    genreSet.add(data[i].genre[j]); 
+                                }
+                            }
+                            else {
+                                genreSet.add(data[i].genre[0]);
+                            } 
+                        }
+                        arr = Array.from(genreSet);
+                        for (var i = 0; i < arr.length; i++) {
+                            $("#genres").append('<option>' + arr[i] +"</option>");
+                        }
+                        
+                        $("button").click(function(){
+                           str = "";
+                           select = document.getElementById("genres");
+                           genreText = select.options[select.selectedIndex].text;
+                           for (var i =0; i <data.length; i++) {
+                               if (data[i].genre.length > 1) {
+                                   for (var j = 0; j < data[i].genre.length; j++) {
+                                    
+                                     if (genreText == data[i].genre[j]) {
+                                        str += data[i].title + "<br>";
+                                        
+                                     }
+                                  }
+                               }
+                               else {
+                                if (genreText == data[i].genre[0]) {
+                                        str += data[i].title + "<br>";
+                                }
+                                
+                               }
+                           }
+                           document.getElementById("songs").innerHTML = str;
+                        })
+                    });
+    </script>
+     
+    <form>
+        <select id = "genres" name = "genres">
+        </select>
+        <button id = "filter" type = "button">Filter</button>
+    </form>
+    <div id = "songs"></div>
+    </body>
+</html>

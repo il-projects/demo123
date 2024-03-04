@@ -2,12 +2,26 @@
 <html>
     <head>
         <meta charset="utf-8">
+	<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   
+	integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   
+	crossorigin="anonymous"></script>
+
     </head>
     <body>
         <script>
-        var songs= $.get("songs.json)");
-        songString = JSON.stringify(songs);
-        document.write(songString);
+          $.get("https://il-projects.github.io/demo123/Problem_set_2_3/songs.json",
+                    function(data){
+                        songStr = JSON.stringify(data);
+                        str = "";
+                        data.forEach(function(song) {
+                            str += "Title: "+ song.title + "</br>" 
+                                   + "Artist: "+song.artist + "</br>" +
+                                   "Release Year: "+ song.year + "</br>" +
+                                   "Genre: "+ song.genre + "</br>" + "</br>";
+                        })
+                        document.getElementById("songs").innerHTML = str;
+                    });
     </script>
+    <div id = "songs"></div>
     </body>
 </html>
