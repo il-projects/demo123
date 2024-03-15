@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name ="viewport" content = "width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Wordle</title>
+    <style type="text/css">
+		body,html{font-family: "Times New Roman";color: black;}
+        h1{font-size:20px; position: relative; left: 80px}
+        .grid {
+            grid-template-columns: auto auto auto auto auto;
+            grid-template-rows:auto auto auto auto auto auto;
+            grid-gap: 10px;
+            padding:10px;
+            max-width:50px;
+            display: grid;
+        }
+        .box {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            font-size:50px;
+            text-align: center;
+            text-transform:uppercase
+        }
+ 
+	</style>
+
+
+
+</head>
+<body>
+    <h1>Wordle Game </h1>
+    <div id = "board"></div>
+
+    <form name = "userGuess">
+        Please enter your guesses:
+        <input type = "text" name = "answer" id = "answer">
+    </form>
+    <button onclick = "checkGuesses()">Check Guesses</button>
+    <button id ="gameButton" onclick = "newGame()">New Game</button>
+    <script>
+        numGuesses = 0;
+        boardSetUp();
+        hideButton();
+        startGame();
+    
+        function counts(arr,le) {
+           count = 0;
+           arr.forEach(index => {
+              if(index == le) {
+                  count++;
+              }
+           })
+          return count;
+        }
+        function boardSetUp() {
+            board = document.getElementById("board");
+            grid = document.createElement("div");
+            grid.className = "grid";            
+            for (i = 0; i< 6; i++) {
+                for (j =0; j< 5; j++) {
+                    sqr = document.createElement("div");
+                    sqr.className = "box";
+                    sqr.id = "sqr" +j + i;
+                    grid.appendChild(sqr);
+                }
+            }
+            board.appendChild(grid);
+        }
+        
+        function startGame() {
+            fetch('https://random-word-api.herokuapp.com/word?length=5') 
+           .then (response => response.text())
+           .then(data =>{
+            result = data.slice(2,7);
+            console.log("Correct answer: "+result);
+            correctVal = result;
+            checkGuesses();
+        })
+        }
+         function checkGuesses() {
+            correctLC = correctVal;
+            correctVal = correctLC.toUpperCase();
+           
+            if (numGuesses == 0) {
+                numGuesses = 1;
+            }
+            else if (numGuesses <= 6){
+                j = numGuesses - 1;
+                userEntersLC = document.userGuess.answer.value;
+                if (userEntersLC.length != 5) {
+                    alert ('The word must contain 5 letters.');
+                    return;
+                }
+                userEnters = userEntersLC.toUpperCase();
+                if (correctVal == userEnters) {
+                    alert("Congratulations! You guessed correctly!");
+                    showButton();
+                }
+                var letters = {};
+                var goldLocation = {};
+                len = userEnters.length;
+                for (i = 0; i < len; i++) {
+                    key = userEnters[i];
+
+                    numUserLetter = counts(userEnters.split(''),key);
+                    numCorrectLetter = counts(correctVal.split(''),key);
+
+                    if (numUserLetter > numCorrectLetter) {
+                        if (key in letters) {
+                                val = letters[key];
+                                letters[key] = val+1;
+                                
+                            }
+                        else {
+                                letters[key] = 1;
+                                
+                        }
+                    }
+
+                    if (key == correctVal[i]) {
+                        if (numUserLetter > numCorrectLetter && letters[key] > numCorrectLetter) {
+                            index = goldLocation[key].length;
+                            document.getElementById(goldLocation[key][index-1]).innerHTML = key;
+                            document.getElementById(goldLocation[key][index-1]).style.backgroundColor = "grey";
+                            val = letters[key];
+                            letters[key] = val - 1;
+                            goldLocation[key].splice(index-1,1);
+
+
+                        }
+                        
+                        document.getElementById("sqr"+i +j).innerHTML = key;
+                        document.getElementById("sqr"+i +j).style.backgroundColor = "green";
+                    }
+                    else if (!correctVal.includes(key)) {
+                        
+                       document.getElementById("sqr"+i +j).innerHTML = key;
+                       document.getElementById("sqr"+i +j).style.backgroundColor = "grey";
+                    }
+                    else{ 
+                        if (numUserLetter > numCorrectLetter) {
+                            if(letters[key] <=numCorrectLetter) {
+                                if (key in goldLocation) {
+                                    goldLocation[key].push("sqr" + i +j);
+                                    
+                                }
+                                else {
+                                    goldLocation[key] = [];
+                                    goldLocation[key].push("sqr" + i +j);
+                                }
+                               
+                           
+                               document.getElementById("sqr"+i +j).innerHTML = key;
+                               document.getElementById("sqr"+i +j).style.backgroundColor = "yellow";
+                               
+                            }
+                            else {
+                             
+                               document.getElementById("sqr"+i +j).innerHTML = key;
+                               document.getElementById("sqr"+i +j).style.backgroundColor = "grey";
+                            }
+                        }
+                        else {
+                               
+                               document.getElementById("sqr"+i +j).innerHTML = key;
+                               document.getElementById("sqr"+i +j).style.backgroundColor = "yellow";
+                        }
+                        
+                    }
+                    
+                }
+                numGuesses++;
+            } 
+            if(numGuesses > 6) {
+                
+                 alert("The correct answer is "  + correctVal +". Please try again.");
+                 showButton();
+                 
+            }  
+         }
+         
+       
+        function newGame() {
+          
+                 for (i = 0; i< 6; i++) {
+                    for (j =0; j< 5; j++) {
+                       document.getElementById("sqr"+j +i).innerHTML = "";
+                       document.getElementById("sqr"+j +i).style.backgroundColor = "white";
+                     }
+                }  
+                hideButton();
+                numGuesses = 0;
+                startGame();
+        }
+        function showButton() {
+            x = document.getElementById("gameButton");
+            x.style.display = "block";
+        }
+        function hideButton() {
+            x = document.getElementById("gameButton");
+            x.style.display = "none";
+        }
+
+    
+
+        
+    </script>
+    
+</body>
+</html>
